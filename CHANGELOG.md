@@ -8,6 +8,12 @@
 
 ## [Unreleased]
 
+## [1.23.9.4] - 2026-10-17
+
+### Added
+
+- На вкладке «Формы» поле выбора объекта конфигурации. Нажатие открывает меню: в поле ввода можно ввести название объекта и выбрать его для просмотра.
+
 ## [1.23.9.2] - 2026-10-17
 
 ### Added
@@ -309,7 +315,8 @@
 - Имена команд показываются без служебного префикса.
 - Запись XML сохраняет структуру файла.
 
-[Unreleased]: https://github.com/Poroot4ik/inspector_form_1C/compare/v1.23.9.2...HEAD
+[Unreleased]: https://github.com/Poroot4ik/inspector_form_1C/compare/v1.23.9.4...HEAD
+[1.23.9.4]: https://github.com/Poroot4ik/inspector_form_1C/releases/tag/v1.23.9.4
 [1.23.9.2]: https://github.com/Poroot4ik/inspector_form_1C/releases/tag/v1.23.9.2
 [1.23.0]: https://github.com/Poroot4ik/inspector_form_1C/blob/main/CHANGELOG.md#1230---2026-09-26
 [1.22.0]: https://github.com/Poroot4ik/inspector_form_1C/blob/main/CHANGELOG.md#1220---2026-09-16
