@@ -20,7 +20,7 @@ jobs:
         run: |
           TAG="${GITHUB_REF_NAME}"
           VER="${TAG#v}"
-          FILE="1c-form-inspector-${VER}.vsix"
+          FILE="inspector_form_1C-${VER}.vsix"
           if [[ ! -f "$FILE" ]]; then
             echo "Asset not found: $FILE"
             exit 1
