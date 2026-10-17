@@ -4,10 +4,13 @@
 
 ## Установка
 
-1. Скачайте [1c-form-inspector-1.23.9.2.vsix](1c-form-inspector-1.23.9.2.vsix).
-2. В Cursor или VS Code откройте палитру команд и выполните **Extensions: Install from VSIX...**.
-3. Выберите скачанный файл.
-4. Перезагрузите окно: **Developer: Reload Window**.
+Скачайте 1c-form-inspector-1.23.9.2.vsix. Это можно сделать нажав вверху кнопку Code -> Download ZIP, после скачивания распаковать архив и получить файл с расширением .vsix либо перейти в ветку релизов, выбрать необходимый релиз, перейти в раздел Assets и скачать файл с расширением .vsix.
+
+В Cursor или VS Code откройте палитру команд View -> Command Palette (Ctrl+Shift+P) и введите команду Extensions: Install from VSIX... и выполните ее.
+
+Выберите скачанный файл.
+
+Перезагрузите окно View -> Command Palette (Ctrl+Shift+P): Developer: Reload Window.
 
 ## Лицензия
 
