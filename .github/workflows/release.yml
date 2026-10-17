@@ -28,11 +28,28 @@ jobs:
           echo "version=${VER}" >> "$GITHUB_OUTPUT"
           echo "file=${FILE}" >> "$GITHUB_OUTPUT"
 
+      - name: Extract changelog section
+        env:
+          VER: ${{ steps.ver.outputs.version }}
+        run: |
+          python3 - <<'PY'
+          import os, pathlib, re
+          ver = os.environ["VER"]
+          text = pathlib.Path("CHANGELOG.md").read_text(encoding="utf-8")
+          match = re.search(rf"^## \[{re.escape(ver)}\].*$", text, re.M)
+          if not match:
+              raise SystemExit(f"CHANGELOG.md has no section ## [{ver}]")
+          rest = text[match.end():]
+          nxt = re.search(r"^## \[", rest, re.M)
+          end = match.end() + (nxt.start() if nxt else len(rest))
+          pathlib.Path("release-notes.md").write_text(text[match.start():end].strip() + "\n", encoding="utf-8")
+          PY
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ steps.ver.outputs.file }}
-          body_path: README.md
+          body_path: release-notes.md
           generate_release_notes: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
